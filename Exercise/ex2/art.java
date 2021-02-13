@@ -36,7 +36,7 @@ public class art {
         for(int i = 0 ; i < Dim ; i++){ 
             for(int j = 0 ; j < Dim; j++){  
         
-                if(i == 2 & ( j == 1 | j == Dim) ){ 
+                if(i == 2 & ( j == 1 | j == Dim)){ 
                     System.out.print("*");  
                 }
                 if(i == 0 | i == (Dim - 1)){ 
