@@ -1,0 +1,11 @@
+Laura Feminino 65.0 23 1.62 
+Marcos Masculino 80.0 25 1.87 
+Flavia Feminino 72.1 21 1.67  
+Joao Masculino 78.2 22 1.78  
+Carlos Masculino 81.0 25 1.81 
+Maria Feminino 72.0 24 1.65 
+Pedro Masculino 81.4 25 1.81  
+Gustavo Masculino 82.0 21 1.81 
+Carolina Feminino 59.0 26 1.57  
+Joana Feminino 61.2 22 1.60  
+Marta Feminino 58.0 23 1.54  
