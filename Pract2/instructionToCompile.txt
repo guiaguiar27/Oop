@@ -1,0 +1,7 @@
+
+
+Hey it's hard to understand how to compile a java project. 
+So, here have some instructions:  
+1- javac -d out Pract2/Main.java Pract2/funcionario.java 
+after this, at same directory, type: 
+java -cp out Pract2.Main 
