@@ -61,13 +61,15 @@ public class funcionario {
         System.out.println("Devido a alteração do salario a folha de pagamento deve ser alterada:"); 
         System.out.println("Digite o numero de horas trabalhadas"); 
         int num_horas = get.nextInt();
-        folha.CadastroFolha(num_horas, TipoContrato, Salario);
+        folha.CadastroFolha(num_horas, TipoContrato, Salario); 
+        folha.printFolhaPagamento();
     } 
     public void setQuantidadeFilhos(int newQuantidade){ 
         this.NumFilhosUnder18 = newQuantidade;   
     }   
 
-    public void init_folha_pagamento(int num_horas){ 
+    public void init_folha_pagamento(int num_horas){  
+
         folha.CadastroFolha(num_horas, TipoContrato, Salario);   
         folha.CalculaImpostoDeRenda();
         folha.CalculaINSS();  
