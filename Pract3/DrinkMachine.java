@@ -58,25 +58,9 @@ public class DrinkMachine {
                 flag_technician = 1; 
                 showStock();
                 break; 
-            case 2: 
-                System.out.println("Enter the name of the refrigerant you want to change");  
-                keyb.nextLine();
-                auxName =  keyb.nextLine();  
-                id = 0; 
-                while(id < total){ 
-                    if(Drinks[id].Name.equals(auxName)){ 
-                        System.out.println("Enter new quantity:");  
-                        SoftDrinkQuantity[id] = keyb.nextInt();   
-                        if(SoftDrinkQuantity[id] > 20){ 
-                            System.out.println("The machine supports only 20 units of each soft drink, the current quantity is 20");
-                            SoftDrinkQuantity[id] = 20; 
-                        }
-                        System.out.println("Enter the new soft drink's price:");  
-                        keyb.nextLine(); 
-                        Drinks[id].SetPrice(keyb.nextFloat());
-
-                        }
-                } 
+            case 2:  
+                technician_change_inventory();
+                break; 
             default: 
                 System.out.println("Invalid number, try again ");  
                 break; 
@@ -104,7 +88,8 @@ public class DrinkMachine {
     }  
 
     public void CancelSale(){ 
-        System.out.println(" insufficient funds! Cancelled purchase!"); 
+        System.out.println(" insufficient funds! Cancelled purchase!");  
+        ShowCurrentCredit(); 
         return; 
 
     }  
@@ -131,7 +116,8 @@ public class DrinkMachine {
         while(counter < total){ 
             if(Drinks[counter].Name.equals(name)){ 
                 if(SoftDrinkQuantity[counter] <= 0){ 
-                    System.out.println("There is no more of this soft drink in stock, sorry"); 
+                    System.out.println("There is no more of this soft drink in stock, sorry");  
+                    ShowCurrentCredit(); 
                     return;  
                 }
                 else{ 
@@ -174,7 +160,31 @@ public class DrinkMachine {
     public int verify_release(){
         if(flag == 0) return 0 ;  
         return 1;  
-    } 
+    }  
+    public void technician_change_inventory(){ 
+        Scanner keyb = new Scanner(System.in);         
+        System.out.println("Enter the name of the soft drink that you want to buy");    
+                String name = keyb.nextLine();    
+                System.out.println(name);
+                int newQt = 0 ; 
+                int id = 0; 
+                while(id < total){ 
+                    if(Drinks[id].Name.equals(name)){
+                        System.out.println("Enter new quantity:");   
+                        newQt = keyb.nextInt();
+                        SoftDrinkQuantity[id] = newQt;    
+                        if(SoftDrinkQuantity[id] > 20){ 
+                            System.out.println("The machine supports only 20 units of each soft drink, the current quantity is 20");
+                            SoftDrinkQuantity[id] = 20; 
+                        }
+                        System.out.println("Enter the new soft drink's price:");  
+                        keyb.nextLine(); 
+                        Drinks[id].SetPrice(keyb.nextFloat());
+
+                        } 
+                    id+=1 ;
+                }
+    }
     
     
 

@@ -43,6 +43,7 @@ public class Main {
                 }  
             } 
             if(person == 0) break;
+            
     }  
 
 
